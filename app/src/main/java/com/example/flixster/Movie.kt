@@ -4,10 +4,11 @@ import org.json.JSONArray
 
 data class Movie (
     val movieId: Int,
-    val posterPath: String,
+    private val posterPath: String,
     val title: String,
     val overview:String,
 ) {
+    val posterImageUrl = "https://image.tmdb.org/t/p/w342/$posterPath"
     companion object {
         fun fromJsonArray(movieJsonArray: JSONArray): List<Movie> {
             val movies = mutableListOf<Movie>()
